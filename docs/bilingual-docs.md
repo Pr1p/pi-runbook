@@ -129,7 +129,7 @@ translation:
   en: ../en/tool-execution-safety.md
 source:
   repo: earendil-works/pi
-  local: C:\Users\DF\Documents\pi\pi-src
+  revision: "<commit-or-tag>"
 ---
 ```
 
@@ -187,4 +187,3 @@ source:
 - 英文文档优先翻“结论、结构、实验路线”，不翻所有思考碎片。
 
 这个策略比较适合我们现在的阶段：既能 build in public，又不牺牲学习速度。
-

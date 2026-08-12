@@ -1,56 +1,77 @@
 # pi-runbook
 
-> A public learning lab for understanding [Pi Agent Harness](https://github.com/earendil-works/pi)
-
 Language: [中文](README.md) | English
 
-This repository is a structured runbook for studying Pi's source code, design ideas, and engineering practices.
-It is not only a notes project. It is also a lab for experiments, public learning, and future upstream contribution.
+A source-reading field guide for [Pi Agent Harness](https://github.com/earendil-works/pi): notes, design breakdowns, and experiments for understanding how a modern coding agent is built.
 
-## What this repo contains
+Pi is a small, composable coding agent harness. This repo asks:
 
-- `docs/` — stable, structured notes
-- `journal/` — chronological learning notes: confusion, experiments, and takeaways
-- `experiments/` — runnable experiments that validate understanding
-- `drafts/` — unfinished ideas and rough notes
+> If you want to understand, extend, fork, or eventually contribute to a modern coding agent, which boundaries should you study first?
 
-## Branch convention
+This is not official documentation, and it is not a complete tutorial. It is a field guide: a set of source-grounded notes that turn design choices in the codebase into readable references and runnable experiments.
 
-- `main` keeps the stable baseline: notes stay updated, experiments should be runnable
-- `experiment/*` branches are for exploratory implementation and validation
-- `journal/` is updated incrementally on `main`
+## How to read
 
-## Reading path
+Start with the whole system, then move into boundaries:
 
-Most detailed notes are currently written in Chinese first. English translations will be added progressively after each topic stabilizes.
+1. [Core ideas](docs/pi-overview.md)
+2. [Architecture](docs/architecture.md)
+3. [Agent Core](docs/agent-core.md)
+4. [Coding Agent](docs/coding-agent.md)
+5. [Extension System](docs/extensions.md)
+6. [Tool Execution / Safety](docs/tool-execution-safety.md)
+7. [Session / Storage](docs/session-storage.md)
+8. [Compaction](docs/compaction.md)
+9. [Model Runtime / Auth](docs/model-runtime-auth.md)
+10. [RPC / SDK](docs/rpc-sdk.md)
 
-1. Start with `docs/pi-overview.md` for the high-level architecture
-2. Follow `journal/` to see how the understanding was built over time
-3. Read `docs/extensions.md` for Pi's extension, tool, command, event, and provider ecosystem
-4. Read `docs/session-storage.md` for sessions, branches, context projection, and storage backends
-5. Read `docs/compaction.md` for context compaction, branch summaries, and checkpoint thinking
-6. Read `docs/model-runtime-auth.md` for providers, models, auth, OAuth, and runtime model snapshots
-7. Read `docs/tool-execution-safety.md` for tool lifecycle, bash/edit/write, hooks, truncation, and safety boundaries
-8. Read `docs/rpc-sdk.md` for SDK, RPC, JSON mode, and external integrations
-9. Read `docs/engineering.md` and `docs/evals.md` for engineering governance and behavior evaluation
-10. Run experiments under `experiments/`
-11. Before contributing upstream, read `docs/contribution-playbook.md`
+If you are interested in upstream participation, start here:
 
-## Bilingual docs plan
+- [Contribution playbook](docs/contribution-playbook.md)
+- [Engineering governance](docs/engineering.md)
+- [Evals](docs/evals.md)
 
-The current source-of-truth language is Chinese because this repo is also a thinking log.
-The target structure is bilingual:
+Most long-form notes are currently Chinese-first. English versions will be added after the corresponding topics stabilize.
 
-- Chinese notes remain the primary thinking source during active exploration.
-- English pages are added after each topic becomes stable.
-- The README already supports language switching.
-- See `docs/bilingual-docs.md` for the translation workflow and naming convention.
+## Reference
 
-## Local Pi source
+### Architecture
 
-The local Pi source checkout is expected at:
+- [Core ideas](docs/pi-overview.md) — Pi's layering, core abstractions, and design direction.
+- [Architecture](docs/architecture.md) — monorepo package structure and module boundaries.
+- [Agent Core](docs/agent-core.md) — agent loop, events, and tool-call execution.
+- [AI Package](docs/ai-package.md) — providers, models, streaming, and multi-provider abstraction.
+- [Coding Agent](docs/coding-agent.md) — the product layer that turns agent-core into a coding agent.
+- [TUI Engine](docs/tui-engine.md) — terminal UI, component model, and rendering approach.
 
-```text
-C:\Users\DF\Documents\pi\pi-src
-```
+### Runtime Boundaries
+
+- [Extension System](docs/extensions.md) — extension loading, events, commands, tools, providers, and UI hooks.
+- [Tool Execution / Safety](docs/tool-execution-safety.md) — `read` / `bash` / `edit` / `write`, hooks, truncation, mutation queues, and sandbox posture.
+- [Session / Storage](docs/session-storage.md) — JSONL sessions, entry trees, branches, context projection, and SQLite backend.
+- [Compaction](docs/compaction.md) — context compaction, split turns, branch summaries, and checkpoint thinking.
+- [Model Runtime / Auth](docs/model-runtime-auth.md) — `models.json`, `auth.json`, OAuth, provider composition, and available model snapshots.
+- [RPC / SDK](docs/rpc-sdk.md) — `createAgentSession()`, `AgentSessionRuntime`, JSONL RPC, and external UI integration.
+
+### Engineering
+
+- [Engineering governance](docs/engineering.md) — CI/CD, dependency management, supply-chain safety, and maintenance style.
+- [Evals](docs/evals.md) — eval harness, real AgentSession runs, and LLM behavior regression.
+- [Contribution playbook](docs/contribution-playbook.md) — issues, PRs, `lgtmi` / `lgtm`, and entry points for new contributors.
+- [Bilingual docs strategy](docs/bilingual-docs.md) — Chinese-first notes, progressive English versions, and a future docs-site shape.
+
+## Repo layout
+
+- `docs/` — stable topic notes and references.
+- `journal/` — learning traces, temporary judgments, and retrospectives.
+- `experiments/` — small experiments that validate source-level understanding.
+- `drafts/` — ideas that are not yet ready for the reference docs.
+
+## Writing principles
+
+- Keep notes source-grounded.
+- Prefer diagrams and small examples over long narration.
+- Separate “what the code does” from “my current interpretation”.
+- Turn fuzzy understanding into experiments.
+- Remove machine-local details before publishing.
 
