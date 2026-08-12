@@ -201,8 +201,8 @@ flowchart LR
 强 gatekeeping 模式：
 
 - 新 contributor 的 issue 和 PR 默认自动关闭，maintainer 每日审查
-- lgtmi（临时贡献者）：可以参与讨论和提交
-- lgtm（信任贡献者）：更高权限
+- lgtmi（issue 级信任）：future issues 不再自动关闭
+- lgtm（PR 级信任）：future issues 和 PRs 不再自动关闭
 - 先靠质量证明自己，再逐步拿权限
 
 ## 对比 Claude Code / Codex
