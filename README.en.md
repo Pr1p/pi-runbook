@@ -66,6 +66,7 @@ Most long-form notes are currently Chinese-first. English versions will be added
 - `journal/` — learning traces, temporary judgments, and retrospectives.
 - `experiments/` — small experiments that validate source-level understanding.
 - `drafts/` — ideas that are not yet ready for the reference docs.
+- `.agents/skills/` — repo-local agent skills for writing and maintenance conventions.
 
 ## Writing principles
 
@@ -74,4 +75,3 @@ Most long-form notes are currently Chinese-first. English versions will be added
 - Separate “what the code does” from “my current interpretation”.
 - Turn fuzzy understanding into experiments.
 - Remove machine-local details before publishing.
-

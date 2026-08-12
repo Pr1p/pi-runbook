@@ -64,6 +64,7 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 - `journal/` — 学习过程、临时判断和阶段性复盘。
 - `experiments/` — 用小实验验证对源码设计的理解。
 - `drafts/` — 还没整理成文档的想法。
+- `.agents/skills/` — 仓库自带的 agent 写作/维护规范。
 
 ## Writing principles
 

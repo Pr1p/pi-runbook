@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pi Runbook Writer"
+  short_description: "Write and maintain pi-runbook docs"
+  default_prompt: "Use $pi-runbook-writer to update pi-runbook with a source-grounded field-guide style."
