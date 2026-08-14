@@ -12,6 +12,8 @@ This is not official documentation, and it is not a complete tutorial. It is a f
 
 ## How to read
 
+Full documentation map: [docs/README.en.md](docs/README.en.md).
+
 Start with the whole system, then move into boundaries:
 
 1. [Core ideas](docs/pi-overview.md)
@@ -27,6 +29,8 @@ Start with the whole system, then move into boundaries:
 11. [Model Runtime / Auth](docs/model-runtime-auth.md)
 12. [RPC / SDK](docs/rpc-sdk.md)
 13. [Telemetry](docs/telemetry.md)
+
+If you want a visual-first path, start with the [visual architecture map](docs/visual-map.md) and the [visual atlas](docs/README.en.md#visual-atlas).
 
 If you are interested in upstream participation, start here:
 

@@ -12,6 +12,8 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 
 ## 怎么读
 
+完整文档地图见：[docs/README.md](docs/README.md)。
+
 先读整体，再读边界：
 
 1. [核心思想概览](docs/pi-overview.md)
@@ -27,6 +29,8 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 11. [Model Runtime / Auth](docs/model-runtime-auth.md)
 12. [RPC / SDK](docs/rpc-sdk.md)
 13. [Telemetry](docs/telemetry.md)
+
+如果你想先用图建立印象，可以从 [架构视觉地图](docs/visual-map.md) 和 [文档视觉地图目录](docs/README.md#视觉地图目录) 开始。
 
 如果你关心参与上游，可以直接看：
 
