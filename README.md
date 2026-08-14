@@ -15,17 +15,18 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 先读整体，再读边界：
 
 1. [核心思想概览](docs/pi-overview.md)
-2. [架构总览](docs/architecture.md)
-3. [Agent Core](docs/agent-core.md)
-4. [Coding Agent](docs/coding-agent.md)
-5. [扩展系统](docs/extensions.md)
-6. [工具执行与安全边界](docs/tool-execution-safety.md)
-7. [Session / Storage](docs/session-storage.md)
-8. [SQLite Session Backend](docs/session-backend.md)
-9. [Compaction](docs/compaction.md)
-10. [Model Runtime / Auth](docs/model-runtime-auth.md)
-11. [RPC / SDK](docs/rpc-sdk.md)
-12. [Telemetry](docs/telemetry.md)
+2. [架构视觉地图](docs/visual-map.md)
+3. [架构总览](docs/architecture.md)
+4. [Agent Core](docs/agent-core.md)
+5. [Coding Agent](docs/coding-agent.md)
+6. [扩展系统](docs/extensions.md)
+7. [工具执行与安全边界](docs/tool-execution-safety.md)
+8. [Session / Storage](docs/session-storage.md)
+9. [SQLite Session Backend](docs/session-backend.md)
+10. [Compaction](docs/compaction.md)
+11. [Model Runtime / Auth](docs/model-runtime-auth.md)
+12. [RPC / SDK](docs/rpc-sdk.md)
+13. [Telemetry](docs/telemetry.md)
 
 如果你关心参与上游，可以直接看：
 
@@ -38,6 +39,7 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 ### Architecture
 
 - [核心思想概览](docs/pi-overview.md) — Pi 的层级关系、核心抽象和设计取向。
+- [架构视觉地图](docs/visual-map.md) — 用中心运行时、六个边界和对照表快速建立整体心智模型。
 - [架构总览](docs/architecture.md) — monorepo 包结构和模块边界。
 - [Agent Core](docs/agent-core.md) — agent loop、事件流、tool call 执行模型。
 - [AI Package](docs/ai-package.md) — provider、model、streaming 和多模型抽象。

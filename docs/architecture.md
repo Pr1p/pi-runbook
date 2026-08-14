@@ -5,6 +5,8 @@
 
 pi 是一个 npm workspaces monorepo，当前是 **10 个顶层包 + 1 个 session backend**。这篇是"结构地图"：先看包与依赖，再看模块边界和数据流。至于**为什么**要这么拆（变化频率隔离、各层独立复用），见 [核心思想概览](pi-overview.md)。
 
+如果你还没有建立整体画面，先看 [架构视觉地图](visual-map.md)：它用“中心运行时 + 六个边界”的方式帮助快速定位。
+
 > 历史注记：本页早前记录的是"四个核心包"（tui / ai / agent-core / coding-agent）。经核对源码，`telemetry`、`protocol`、`client`、`server`、`session-backends`、`evals` 在 7/21~8/05 就已加入 main，是当时遗漏而非后来新增。详见文末"与旧四包认知的差异"。
 
 ## 十一个包
@@ -223,6 +225,7 @@ sequenceDiagram
 ## 阅读地图
 
 - 想理解"为什么拆"和整体哲学 → [pi-overview.md](pi-overview.md)
+- 想先看一张图建立整体心智模型 → [visual-map.md](visual-map.md)
 - 想深入某个包 → 见上面"每个包内部的关键模块"对应的专题文档
 - 想理解边界如何被外部扩展 → [extensions.md](extensions.md)
 - 想理解本地 RPC 与远程协议的细节 → [rpc-sdk.md](rpc-sdk.md)

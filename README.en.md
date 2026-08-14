@@ -15,17 +15,18 @@ This is not official documentation, and it is not a complete tutorial. It is a f
 Start with the whole system, then move into boundaries:
 
 1. [Core ideas](docs/pi-overview.md)
-2. [Architecture](docs/architecture.md)
-3. [Agent Core](docs/agent-core.md)
-4. [Coding Agent](docs/coding-agent.md)
-5. [Extension System](docs/extensions.md)
-6. [Tool Execution / Safety](docs/tool-execution-safety.md)
-7. [Session / Storage](docs/session-storage.md)
-8. [SQLite Session Backend](docs/session-backend.md)
-9. [Compaction](docs/compaction.md)
-10. [Model Runtime / Auth](docs/model-runtime-auth.md)
-11. [RPC / SDK](docs/rpc-sdk.md)
-12. [Telemetry](docs/telemetry.md)
+2. [Visual architecture map](docs/visual-map.md)
+3. [Architecture](docs/architecture.md)
+4. [Agent Core](docs/agent-core.md)
+5. [Coding Agent](docs/coding-agent.md)
+6. [Extension System](docs/extensions.md)
+7. [Tool Execution / Safety](docs/tool-execution-safety.md)
+8. [Session / Storage](docs/session-storage.md)
+9. [SQLite Session Backend](docs/session-backend.md)
+10. [Compaction](docs/compaction.md)
+11. [Model Runtime / Auth](docs/model-runtime-auth.md)
+12. [RPC / SDK](docs/rpc-sdk.md)
+13. [Telemetry](docs/telemetry.md)
 
 If you are interested in upstream participation, start here:
 
@@ -40,6 +41,7 @@ Most long-form notes are currently Chinese-first. English versions will be added
 ### Architecture
 
 - [Core ideas](docs/pi-overview.md) — Pi's layering, core abstractions, and design direction.
+- [Visual architecture map](docs/visual-map.md) — a quick mental model using the central runtime, six boundaries, and a comparison table.
 - [Architecture](docs/architecture.md) — monorepo package structure and module boundaries.
 - [Agent Core](docs/agent-core.md) — agent loop, events, and tool-call execution.
 - [AI Package](docs/ai-package.md) — providers, models, streaming, and multi-provider abstraction.
