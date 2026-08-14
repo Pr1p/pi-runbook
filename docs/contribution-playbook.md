@@ -9,6 +9,10 @@
 
 对新 contributor 来说，最稳的路线是：
 
+![Pi Contribution Trust Path](assets/contribution-trust-path-map.png)
+
+上图先把参与路线理解成信任路径：先用源码阅读、本地试用和 runbook 复盘降低沟通噪音，再用小而具体的 issue 争取 `lgtmi`，最后在足够理解边界后进入 `lgtm` 和小 PR 阶段。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart LR
     A["读源码和文档"] --> B["本地试用"]

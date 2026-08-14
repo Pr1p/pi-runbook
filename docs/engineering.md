@@ -19,6 +19,10 @@ pi 的工程实践核心不是“流程很多”，而是“把维护者注意�
 
 ## 总体结构
 
+![Pi Engineering Governance](assets/engineering-governance-map.png)
+
+上图先把 pi 的工程实践理解成一套维护系统：本地 gate、CI、供应链检查、issue/PR 门禁、发布流水线和 dogfooding 都在保护维护者注意力，让改动保持可验证、可解释。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TD
     A["开发者本地改动"] --> B["pre-commit"]

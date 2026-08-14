@@ -18,6 +18,10 @@
 
 所以当前策略是：
 
+![Runbook Bilingual Strategy](assets/bilingual-strategy-map.png)
+
+上图先把双语策略理解成一个稳定知识循环：中文保留探索速度，稳定章节先用图表沉淀结构，再把成熟内容改写成面向外部读者的英文版本。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart LR
   A["中文探索笔记<br/>快速迭代"] --> B["稳定章节"]
