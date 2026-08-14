@@ -4,6 +4,10 @@
 
 pi-coding-agent 把前三层组装成一个能直接用的 coding agent。它不是脚手架，不是环境配置器，而是 coding 场景的完整产品实现。
 
+![Pi Coding Agent Facade](assets/coding-agent-facade-map.png)
+
+上图先把 `pi-coding-agent` 理解成产品层 facade：它把 coding tools、session lifecycle、model runtime、TUI/RPC/print 模式、extensions 和底层 operations 组合成一个可直接使用的 `AgentSession`。
+
 ## 三大职责
 
 ### 1. 定义 coding 场景的 tool

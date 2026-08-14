@@ -4,6 +4,10 @@
 
 pi-tui 是从零写的终端 UI 库，跟 agent 无关。依赖只有两个 npm 包（get-east-asian-width, marked）。
 
+![Pi TUI Engine](assets/tui-engine-map.png)
+
+上图先把 `pi-tui` 理解成独立终端 UI 引擎：组件负责把状态渲染成文本行，diff renderer 只更新变化部分，input/overlay 管交互，`pi-coding-agent` 只是它的一个消费者。
+
 ## 做什么
 
 两件事：

@@ -13,6 +13,10 @@ pi 不是只有一个 TUI。它真正有价值的地方是：核心能力被封�
 
 先立一个总图，避免后面混淆。当前 main 上并存着**两套**程序接口，加上 SDK 共三个入口：
 
+![Pi SDK / RPC Surfaces](assets/sdk-rpc-surfaces-map.png)
+
+上图先把 pi 的程序化入口分成三类：SDK 是同进程嵌入，本地 JSONL RPC 是子进程控制，CBOR remote 是 socket session protocol。它们共享 agent runtime，但不是新旧替代关系。
+
 | | SDK | 本地 JSONL RPC | 远程 CBOR 协议 |
 |---|---|---|---|
 | 包 | `pi-coding-agent` | `pi-coding-agent` | `pi-protocol` + `pi-client` + `pi-server` |

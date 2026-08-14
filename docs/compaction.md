@@ -25,6 +25,10 @@ pi 里有两种相关但不同的总结：
 
 ## 2. Compaction 的整体流程
 
+![Pi Compaction Checkpoints](assets/compaction-checkpoints-map.png)
+
+上图先把 compaction 理解成 checkpoint 机制：它不是删除 session 历史，而是选择合法 cut point，把旧上下文总结成 `CompactionEntry`，再用 summary + retained tail 重建后续 LLM context。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TD
   A["Agent turn 结束 / 手动 compact"] --> B["估算当前 context tokens"]
@@ -393,4 +397,3 @@ summary 的 usage、read files、modified files 都会写回 session。
 - overflow recovery 的用户提示优化。
 
 如果 Session / Storage 解决的是“历史怎么保存”，那么 Compaction 解决的是“历史太长时，怎么继续工作而不失控”。
-

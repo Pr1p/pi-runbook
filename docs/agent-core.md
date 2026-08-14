@@ -12,6 +12,10 @@ agent-core 不知道文件系统是什么，不知道 bash 是什么，不知道
 
 核心函数 `runLoop`（agent-loop.ts，约 800 行）是一个双层 while 循环：
 
+![Pi Agent Core Loop](assets/agent-core-loop-map.png)
+
+上图先把 `agent-core` 理解成一次 `prompt()` 内部的运行时循环：消息进入 context pipeline，模型流式返回文本或 tool call，tool lifecycle 负责执行边界，turn control 决定是否继续。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TD
     Start["agent_start"] --> CheckSteering{"有 steering 消息?"}

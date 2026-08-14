@@ -4,6 +4,10 @@
 
 pi-ai 是 LLM 的统一抽象层。本质是适配器模式的大规模应用。
 
+![Pi AI Provider Layer](assets/ai-provider-layer-map.png)
+
+上图先把 `pi-ai` 理解成 provider adapter 层：model metadata、auth、provider factory、底层 API adapter 和 streaming normalize 都收敛成上层能稳定调用的一套形状。
+
 ## 解决什么问题
 
 各家厂商的 API 格式全不同：

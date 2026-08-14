@@ -9,6 +9,10 @@
 
 agent 的进程间通信，本质是**"流式结构化事件"的传输问题**。JSONL 和 CBOR 是同一个问题在"本地可读"和"远程高效"两个约束下的两个答案。
 
+![Pi Protocol Transports](assets/protocol-transports-map.png)
+
+上图先把 JSONL 和 CBOR 理解成同一个事件流问题下的两种传输选择：本地 RPC 优先可读和可调试，远程 session 优先分帧、二进制和不可信输入边界。
+
 ## 为什么 agent 的通信是"事件流"，不是"文档"
 
 普通程序调 API 是"一次请求一次结果"。但 LLM 是 **token 级增量生成**，agent 收到的是**一条持续的事件序列**：
