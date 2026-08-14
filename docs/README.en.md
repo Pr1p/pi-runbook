@@ -133,4 +133,3 @@ After this path, you should understand why Pi uses `lgtmi` / `lgtm` gates, what 
 - Separate source observations from current interpretation.
 - When a claim can be tested, turn it into a small experiment.
 - Before sending anything upstream, compress it into a short, concrete, reproducible issue or PR description.
-
