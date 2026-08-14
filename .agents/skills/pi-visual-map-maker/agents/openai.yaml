@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pi Visual Map Maker"
+  short_description: "Create consistent hand-drawn architecture maps for pi-runbook."
+  default_prompt: "Use $pi-visual-map-maker to create or update a hand-drawn architecture map for a pi-runbook topic."
