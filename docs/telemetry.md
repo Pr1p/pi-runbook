@@ -22,6 +22,10 @@ Agent runtime 里有很多需要观察但不应该彼此耦合的动作：
 
 如果每层都直接接某个 telemetry backend，core 很快会被平台 SDK、全局上下文、exporter flush、采样策略拖住。Pi 的选择是把 telemetry 下沉成一个非常小的 runtime contract：
 
+![Pi Telemetry Contract](assets/telemetry-map.png)
+
+上图先把 `pi-telemetry` 理解成三层：runtime contract 定义如何包住一次操作，typed vocabulary 定义 Pi 关心哪些 span，adapter 决定最后写到哪里。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TD
     APP["应用层 / 产品层"] -->|提供实现| CTX["TelemetryContext"]

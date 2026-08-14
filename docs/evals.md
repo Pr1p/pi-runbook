@@ -13,6 +13,10 @@ evals 补的就是这块空缺：
 
 > 真实模型 + 真实 AgentSession + 真实工具链，在关键场景下是否还保持预期行为。
 
+![Pi Evals](assets/evals-map.png)
+
+上图先把 evals 理解成行为回归层：它不取代 unit/integration tests，而是在显式 provider/model、隔离 workspace 和真实 `AgentSession` 上验证少数关键 agent 行为。下面的 Mermaid 版本保留为可维护文本版。
+
 ## 测试分层
 
 ```mermaid

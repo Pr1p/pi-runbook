@@ -26,6 +26,10 @@
 
 pi 的处理方式很“系统工程”：不是在一个工具函数里塞满判断，而是把它拆成几层。
 
+![Pi Tool Execution Boundary](assets/tool-execution-boundary-map.png)
+
+上图先把工具系统理解成一条边界管线：模型提出 tool call，`agent-core` 做 preflight 和生命周期编排，hook/policy 可以介入，真正执行则落到内置工具、扩展工具或外部 backend。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TD
   A["Model<br/>生成 tool call"] --> B["pi-agent-core<br/>tool lifecycle"]
