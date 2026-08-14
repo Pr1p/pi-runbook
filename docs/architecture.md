@@ -11,6 +11,10 @@ pi 是一个 npm workspaces monorepo，当前是 **10 个顶层包 + 1 个 sessi
 
 ## 十一个包
 
+![Pi Monorepo Map](assets/pi-monorepo-map.png)
+
+这张手绘图只表达 package group，不表达精确依赖。真实依赖方向见后面的 Mermaid 图和 package 表。
+
 | 目录 | npm 包 | 定位 | 内部依赖 | 外部依赖数 |
 |---|---|---|---|---|
 | `packages/tui` | `pi-tui` | 终端 UI 库（差分渲染） | 无 | 2 |

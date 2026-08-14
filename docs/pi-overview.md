@@ -10,6 +10,10 @@ Mario Zechner（badlogic），奥地利工程师，libGDX 创造者。做了十�
 
 ## 四层架构
 
+![Pi Core Architecture](assets/pi-core-architecture.png)
+
+上图先给出阅读入口：`pi-coding-agent` 是产品层，`pi-agent-core` 和 `pi-tui` 是被产品层组合的运行时能力，`pi-ai` 负责把不同模型供应商收敛成统一接口。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TB
     User["👤 用户 / 终端"]

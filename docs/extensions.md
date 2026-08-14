@@ -32,6 +32,10 @@ pi 的做法是：核心层不急着包办所有场景，而是暴露一套 Exte
 
 ## 2. 整体结构图
 
+![Pi Extension System](assets/extension-system-map.png)
+
+上图先把扩展系统当成一个产品层边界来看：外部代码通过 loader 进入，借由 Extension API 注册能力，最终由 ExtensionRunner 绑定到 `AgentSession`。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TD
   A["Extension 文件 / npm 包"] --> B["ResourceLoader"]
