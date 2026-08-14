@@ -267,32 +267,29 @@ flowchart TD
 
 ## 8. SQLite backend 为什么存在
 
-SQLite backend 不只是“换个存储格式”。
+SQLite backend 不只是“换个存储格式”。它把 session 的 canonical log、派生缓存、搜索索引和写入租约都显式建模。
 
-它有这些表：
+当前 main 上它已经拆成独立包 `@earendil-works/pi-session-backend-sqlite-node`，包含：
 
-| 表 | 用途 |
-|---|---|
-| `sessions` | session 元信息、cwd、parent、active leaf |
-| `session_entries` | 所有 entry，带 `entry_seq` |
-| `session_sequences` | 每个 session 的 entry 序号 |
-| `branch_entries` | materialized branch path |
-| `session_materialized` | session 统计与摘要状态 |
-| `entry_materialized` | 部分 entry 的派生索引，比如 label |
+- `node:sqlite` adapter；
+- `SqliteSessionRepository`；
+- migrations；
+- `sessions` / `entries` / `records` / `facts` / `lanes` 等 canonical 与状态表；
+- `branch_entries` / `session_stats` 等 derived state；
+- `writer_leases` 写入租约；
+- 懒创建的 FTS5 search。
 
-这里最关键的是 materialized state。
+这里最关键的是两条边界：
 
-JSONL 每次要统计 session name、message count、cost、labels，通常要扫文件。SQLite backend 会在 append entry 时同步更新派生状态：
+1. **事实源和派生状态分开**
 
-```mermaid
-flowchart LR
-  A["append entry"] --> B["写 session_entries"]
-  A --> C["更新 active_leaf_id"]
-  A --> D["更新 materialized summary"]
-  A --> E["必要时重建 active branch"]
-```
+   `entries.parent_id` 是 canonical tree；`branch_entries` 是让 branch scan 更便宜的缓存。
 
-这让列表、统计、分支路径读取更适合规模化。
+2. **repository 和 search 分开**
+
+   repository 管 create/open/list/delete/fork 和 session 写入；search 是独立 service，挂在同一个 SQLite database 上。
+
+更完整的表结构、FTS trigger、writer lease 和拆包理由见 [Session Backend](session-backend.md)。
 
 所以可以这样理解：
 
@@ -421,4 +418,3 @@ JSONL 适合本地透明使用，SQLite 适合更结构化的查询和规模化�
 - session export/share 的边界说明。
 
 如果说 Extension System 是“生态怎么接进来”，那么 Session / Storage 就是“这些生态行为怎么被保存和回放”。
-

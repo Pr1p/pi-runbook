@@ -15,15 +15,17 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 先读整体，再读边界：
 
 1. [核心思想概览](docs/pi-overview.md)
-2. [整体架构](docs/architecture.md)
+2. [架构总览](docs/architecture.md)
 3. [Agent Core](docs/agent-core.md)
 4. [Coding Agent](docs/coding-agent.md)
 5. [扩展系统](docs/extensions.md)
 6. [工具执行与安全边界](docs/tool-execution-safety.md)
 7. [Session / Storage](docs/session-storage.md)
-8. [Compaction](docs/compaction.md)
-9. [Model Runtime / Auth](docs/model-runtime-auth.md)
-10. [RPC / SDK](docs/rpc-sdk.md)
+8. [SQLite Session Backend](docs/session-backend.md)
+9. [Compaction](docs/compaction.md)
+10. [Model Runtime / Auth](docs/model-runtime-auth.md)
+11. [RPC / SDK](docs/rpc-sdk.md)
+12. [Telemetry](docs/telemetry.md)
 
 如果你关心参与上游，可以直接看：
 
@@ -36,7 +38,7 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 ### Architecture
 
 - [核心思想概览](docs/pi-overview.md) — Pi 的层级关系、核心抽象和设计取向。
-- [整体架构](docs/architecture.md) — monorepo 包结构和模块边界。
+- [架构总览](docs/architecture.md) — monorepo 包结构和模块边界。
 - [Agent Core](docs/agent-core.md) — agent loop、事件流、tool call 执行模型。
 - [AI Package](docs/ai-package.md) — provider、model、streaming 和多模型抽象。
 - [Coding Agent](docs/coding-agent.md) — 把 agent-core 放进编程场景的产品层。
@@ -46,10 +48,13 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 
 - [扩展系统](docs/extensions.md) — extension loader、事件、commands、tools、provider 和 UI hook。
 - [工具执行与安全边界](docs/tool-execution-safety.md) — `read` / `bash` / `edit` / `write`、hooks、truncation、mutation queue 和 sandbox 取向。
-- [Session / Storage](docs/session-storage.md) — JSONL session、entry tree、branch、context projection 和 SQLite backend。
+- [Session / Storage](docs/session-storage.md) — JSONL session、entry tree、branch 和 context projection。
+- [SQLite Session Backend](docs/session-backend.md) — `node:sqlite` adapter、repository、migrations、writer lease、FTS search 和 backend 拆分逻辑。
 - [Compaction](docs/compaction.md) — context compaction、split turn、branch summary 和 checkpoint 思路。
 - [Model Runtime / Auth](docs/model-runtime-auth.md) — `models.json`、`auth.json`、OAuth、provider composition 和可用模型快照。
-- [RPC / SDK](docs/rpc-sdk.md) — `createAgentSession()`、`AgentSessionRuntime`、JSONL RPC 和外部 UI 集成。
+- [RPC / SDK](docs/rpc-sdk.md) — `createAgentSession()`、JSONL RPC、CBOR 远程会话协议和外部 UI 集成。
+- [进程间通信协议](docs/protocol-transport.md) — JSONL 与 CBOR 的取舍、为什么 agent 用事件流、client/server 拆分逻辑。
+- [Telemetry](docs/telemetry.md) — vendor-neutral `TelemetryContext` / span schema、no-op / in-memory adapter，以及 agent runtime 的可观测性边界。
 
 ### Engineering
 

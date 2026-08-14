@@ -21,9 +21,11 @@ Start with the whole system, then move into boundaries:
 5. [Extension System](docs/extensions.md)
 6. [Tool Execution / Safety](docs/tool-execution-safety.md)
 7. [Session / Storage](docs/session-storage.md)
-8. [Compaction](docs/compaction.md)
-9. [Model Runtime / Auth](docs/model-runtime-auth.md)
-10. [RPC / SDK](docs/rpc-sdk.md)
+8. [SQLite Session Backend](docs/session-backend.md)
+9. [Compaction](docs/compaction.md)
+10. [Model Runtime / Auth](docs/model-runtime-auth.md)
+11. [RPC / SDK](docs/rpc-sdk.md)
+12. [Telemetry](docs/telemetry.md)
 
 If you are interested in upstream participation, start here:
 
@@ -48,10 +50,13 @@ Most long-form notes are currently Chinese-first. English versions will be added
 
 - [Extension System](docs/extensions.md) — extension loading, events, commands, tools, providers, and UI hooks.
 - [Tool Execution / Safety](docs/tool-execution-safety.md) — `read` / `bash` / `edit` / `write`, hooks, truncation, mutation queues, and sandbox posture.
-- [Session / Storage](docs/session-storage.md) — JSONL sessions, entry trees, branches, context projection, and SQLite backend.
+- [Session / Storage](docs/session-storage.md) — JSONL sessions, entry trees, branches, and context projection.
+- [SQLite Session Backend](docs/session-backend.md) — `node:sqlite` adapter, repository, migrations, writer leases, FTS search, and backend separation.
 - [Compaction](docs/compaction.md) — context compaction, split turns, branch summaries, and checkpoint thinking.
 - [Model Runtime / Auth](docs/model-runtime-auth.md) — `models.json`, `auth.json`, OAuth, provider composition, and available model snapshots.
-- [RPC / SDK](docs/rpc-sdk.md) — `createAgentSession()`, `AgentSessionRuntime`, JSONL RPC, and external UI integration.
+- [RPC / SDK](docs/rpc-sdk.md) — `createAgentSession()`, JSONL RPC, CBOR remote session protocol, and external UI integration.
+- [Inter-process protocols](docs/protocol-transport.md) — JSONL vs CBOR, why agents stream events, and client/server split rationale.
+- [Telemetry](docs/telemetry.md) — vendor-neutral `TelemetryContext` / span schemas, no-op / in-memory adapters, and the agent runtime observability boundary.
 
 ### Engineering
 
