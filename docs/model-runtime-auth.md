@@ -36,6 +36,10 @@ callModel({ apiKey, model, messages })
 
 ## 2. 分层图
 
+![Pi Model Runtime](assets/model-runtime-map.png)
+
+上图先把 `ModelRuntime` 当成产品层 facade 来看：它把内置 providers、`models.json`、extension providers、CredentialStore 和底层 `pi-ai Models` 收敛到一处。下面的 Mermaid 版本保留为可维护文本版。
+
 ```mermaid
 flowchart TD
   A["pi-ai Provider"] --> B["pi-ai Models collection"]
@@ -463,4 +467,3 @@ built-in、models.json、extension provider 叠加成 effective provider。
 - custom provider 的 compat 设置文档。
 
 如果 Extension System 是“生态怎么扩”，Session / Storage 是“状态怎么存”，Compaction 是“长任务怎么不断线”，那 ModelRuntime / Auth 就是“这个 Agent 怎么稳定接入真实模型世界”。
-

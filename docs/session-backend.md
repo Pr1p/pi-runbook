@@ -11,6 +11,10 @@
 
 ## 它在架构里的位置
 
+![SQLite Session Backend](assets/session-backend-map.png)
+
+上图先把 SQLite backend 当成独立 package 来看：repository 管 session 生命周期和写入，search 是独立服务，两者共享 canonical database。下面的 Mermaid 版本保留为可维护文本版。
+
 当前 main 上，SQLite backend 已经是独立 package：
 
 ```text

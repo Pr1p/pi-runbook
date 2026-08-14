@@ -238,6 +238,10 @@ flowchart TD
 
 ## 7. agent-core 的新抽象：Session / SessionStorage / SessionRepo
 
+![Pi Session Abstraction](assets/session-abstraction-map.png)
+
+上图先把这一层理解成可替换存储边界：`AgentHarness` 依赖 `Session`，`Session` 依赖 `SessionStorage` 接口，后端可以是 in-memory、JSONL 或 SQLite。下面的 Mermaid 版本保留为可维护文本版。
+
 更底层的 `agent-core` 里，有一套更干净的异步抽象：
 
 ```mermaid
