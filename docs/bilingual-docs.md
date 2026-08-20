@@ -85,13 +85,13 @@ docs/
 也可以在每篇文档顶部加语言切换：
 
 ```markdown
-Language: 中文 | [English](../en/pi-overview.md)
+Language: 中文 | [English](pi-overview.en.md)
 ```
 
 英文页对应：
 
 ```markdown
-Language: [中文](../zh/pi-overview.md) | English
+Language: [中文](pi-overview.md) | English
 ```
 
 现在还不急着做这个迁移，因为当前 `docs/` 仍在快速增长。等核心章节稳定到 8-10 篇后再搬，会更省力。
@@ -122,7 +122,7 @@ Language: [中文](../zh/pi-overview.md) | English
 
 ## 6. 每篇文档建议加 metadata
 
-后续如果要做 docs site，可以在每篇文档顶部加简单 frontmatter：
+后续如果要做 docs site，可以在每篇文档顶部加简单 frontmatter。当前版本暂时把源码版本和主题来源集中维护在[源码依据与版本索引](source-index.md)，避免每篇文档重复一份容易过期的版本号。
 
 ```yaml
 ---
@@ -130,10 +130,10 @@ lang: zh
 title: "pi Tool Execution / Safety"
 status: draft
 translation:
-  en: ../en/tool-execution-safety.md
+  en: tool-execution-safety.en.md
 source:
   repo: earendil-works/pi
-  revision: "<commit-or-tag>"
+  revision: "see docs/source-index.md"
 ---
 ```
 
@@ -154,15 +154,16 @@ source:
 2. 这章已经有图或表，把结构讲清楚；
 3. 这章短期内不会大改。
 
-当前最适合优先翻译的顺序：
+当前已经补上的高价值英文页面：
 
-1. `pi-overview.md`
-2. `extensions.md`
-3. `tool-execution-safety.md`
-4. `rpc-sdk.md`
-5. `contribution-playbook.md`
+1. `pi-overview.en.md`
+2. `architecture.en.md`
+3. `agent-core.en.md`
+4. `extensions.en.md`
+5. `evals.en.md`
+6. `contribution-playbook.en.md`
 
-原因是这几篇最能体现项目价值，也最适合 build in public。
+原因是这些页面最能解释 Pi 的架构、运行时和协作方式，也最适合对外阅读。
 
 ## 8. 如果以后做站点
 
@@ -173,7 +174,7 @@ source:
 - VitePress / Docusaurus / Astro Starlight 任选一个；
 - `docs/zh` 和 `docs/en` 做语言目录；
 - 首页保留中英切换；
-- 每篇文档顶部有 source / last reviewed；
+- 每个主题在源码索引中有 source / reference revision；
 - 实验代码仍留在 `experiments/`；
 - journal 可以只发布精选总结，不一定全量暴露。
 
@@ -184,10 +185,10 @@ source:
 现在开始采用这些规则：
 
 - 新增核心中文文档仍放在 `docs/`；
-- 每个稳定主题可以补一个英文摘要或英文版；
+- 每个稳定主题可以补一个 `.en.md` 英文摘要或英文版；
 - README 保持中英入口互链；
 - 等核心文档稳定后，再统一迁移到 `docs/zh` / `docs/en`；
 - 翻译前先检查上游源码是否已经变化；
-- 英文文档优先翻“结论、结构、实验路线”，不翻所有思考碎片。
+- 英文文档优先写“结论、结构、实验路线”，不机械翻译所有思考碎片。
 
 这个策略比较适合我们现在的阶段：既能 build in public，又不牺牲学习速度。

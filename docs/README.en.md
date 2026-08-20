@@ -8,7 +8,9 @@ This is the documentation map for `pi-runbook`. The repository README explains w
 
 > If you want to understand Pi systematically, which pages should you read first, and what question does each page answer?
 
-Most long-form notes are currently Chinese-first. This index gives English readers a stable map while the detailed pages continue to evolve.
+Source anchors and version changes: [source and version index](source-index.en.md). Concept navigation: [glossary](glossary.en.md).
+
+Most long-form notes remain Chinese-first. This index and the six `.en.md` topic pages give English readers a stable starting set while the remaining detailed pages evolve.
 
 ## Recommended reading paths
 
@@ -17,8 +19,8 @@ Most long-form notes are currently Chinese-first. This index gives English reade
 For a first pass through the project:
 
 1. [Visual architecture map](visual-map.md)
-2. [Core ideas](pi-overview.md)
-3. [Architecture](architecture.md)
+2. [Core ideas](pi-overview.en.md)
+3. [Architecture](architecture.en.md)
 
 After this path, you should understand whether Pi is a product, a framework, or an agent harness, and where `pi-ai`, `pi-agent-core`, `pi-tui`, and `pi-coding-agent` fit.
 
@@ -26,11 +28,11 @@ After this path, you should understand whether Pi is a product, a framework, or 
 
 For understanding how the agent actually runs:
 
-1. [Agent Core](agent-core.md)
+1. [Agent Core](agent-core.en.md)
 2. [AI Package](ai-package.md)
 3. [Coding Agent](coding-agent.md)
 4. [Tool Execution / Safety](tool-execution-safety.md)
-5. [Extension System](extensions.md)
+5. [Extension System](extensions.en.md)
 
 After this path, you should understand how model output becomes tool execution, how results return to context, and where core runtime, product policy, and extensions are separated.
 
@@ -42,7 +44,7 @@ For long-running tasks, branching, compaction, evals, and telemetry:
 2. [SQLite Session Backend](session-backend.md)
 3. [Compaction](compaction.md)
 4. [Telemetry](telemetry.md)
-5. [Evals](evals.md)
+5. [Evals](evals.en.md)
 
 After this path, you should understand how Pi stores history, how it keeps working after context grows too large, and how runtime behavior can be observed and regression-tested.
 
@@ -62,7 +64,7 @@ After this path, you should understand how humans use Pi, how programs drive Pi,
 For issues, PRs, and maintenance norms:
 
 1. [Engineering governance](engineering.md)
-2. [Contribution playbook](contribution-playbook.md)
+2. [Contribution playbook](contribution-playbook.en.md)
 3. [Bilingual docs strategy](bilingual-docs.md)
 
 After this path, you should understand why Pi uses `lgtmi` / `lgtm` gates, what makes an issue useful to maintainers, and how this runbook can become a public learning lab.
@@ -72,13 +74,13 @@ After this path, you should understand why Pi uses `lgtmi` / `lgtm` gates, what 
 | Visual | Page | Question |
 | --- | --- | --- |
 | `pi-visual-map.png` | [Visual architecture map](visual-map.md) | What is the overall mental model of Pi? |
-| `pi-core-architecture.png` | [Core ideas](pi-overview.md) | How do the four major layers fit together? |
-| `pi-monorepo-map.png` | [Architecture](architecture.md) | How are monorepo packages separated? |
-| `agent-core-loop-map.png` | [Agent Core](agent-core.md) | How does the agent loop continue, stop, and emit events? |
+| `pi-core-architecture.png` | [Core ideas](pi-overview.en.md) | How do the four major layers fit together? |
+| `pi-monorepo-map.png` | [Architecture](architecture.en.md) | How are monorepo packages separated? |
+| `agent-core-loop-map.png` | [Agent Core](agent-core.en.md) | How does the agent loop continue, stop, and emit events? |
 | `ai-provider-layer-map.png` | [AI Package](ai-package.md) | How do many providers become one LLM interface? |
 | `coding-agent-facade-map.png` | [Coding Agent](coding-agent.md) | How does the product layer assemble tools, sessions, TUI, and extensions? |
 | `tui-engine-map.png` | [TUI Engine](tui-engine.md) | Why can the terminal UI engine stay independent of agents? |
-| `extension-system-map.png` | [Extension System](extensions.md) | How do extensions attach commands, tools, hooks, and UI? |
+| `extension-system-map.png` | [Extension System](extensions.en.md) | How do extensions attach commands, tools, hooks, and UI? |
 | `tool-execution-boundary-map.png` | [Tool Execution / Safety](tool-execution-safety.md) | What sits between model tool calls and real-world execution? |
 | `session-abstraction-map.png` | [Session / Storage](session-storage.md) | How does the session abstraction support replaceable backends? |
 | `session-backend-map.png` | [SQLite Session Backend](session-backend.md) | How does the SQLite backend separate repository and search? |
@@ -87,9 +89,9 @@ After this path, you should understand why Pi uses `lgtmi` / `lgtm` gates, what 
 | `sdk-rpc-surfaces-map.png` | [RPC / SDK](rpc-sdk.md) | How do SDK, JSONL RPC, and CBOR remote protocol coexist? |
 | `protocol-transports-map.png` | [Inter-process protocols](protocol-transport.md) | What constraints are JSONL and CBOR each solving? |
 | `telemetry-map.png` | [Telemetry](telemetry.md) | Why is observability a contract before it is an exporter? |
-| `evals-map.png` | [Evals](evals.md) | How do evals protect real LLM behavior? |
+| `evals-map.png` | [Evals](evals.en.md) | How do evals protect real LLM behavior? |
 | `engineering-governance-map.png` | [Engineering governance](engineering.md) | How do CI, release, supply-chain, and contribution gates protect maintainer attention? |
-| `contribution-trust-path-map.png` | [Contribution playbook](contribution-playbook.md) | What kind of trust path do `lgtmi` and `lgtm` represent? |
+| `contribution-trust-path-map.png` | [Contribution playbook](contribution-playbook.en.md) | What kind of trust path do `lgtmi` and `lgtm` represent? |
 | `bilingual-strategy-map.png` | [Bilingual docs strategy](bilingual-docs.md) | How do Chinese exploration and English publication share work? |
 
 ## Topic index
@@ -97,16 +99,16 @@ After this path, you should understand why Pi uses `lgtmi` / `lgtm` gates, what 
 ### Core architecture
 
 - [Visual architecture map](visual-map.md)
-- [Core ideas](pi-overview.md)
-- [Architecture](architecture.md)
-- [Agent Core](agent-core.md)
+- [Core ideas](pi-overview.en.md)
+- [Architecture](architecture.en.md)
+- [Agent Core](agent-core.en.md)
 - [AI Package](ai-package.md)
 - [Coding Agent](coding-agent.md)
 - [TUI Engine](tui-engine.md)
 
 ### Runtime boundaries
 
-- [Extension System](extensions.md)
+- [Extension System](extensions.en.md)
 - [Tool Execution / Safety](tool-execution-safety.md)
 - [Session / Storage](session-storage.md)
 - [SQLite Session Backend](session-backend.md)
@@ -122,9 +124,14 @@ After this path, you should understand why Pi uses `lgtmi` / `lgtm` gates, what 
 ### Engineering and collaboration
 
 - [Engineering governance](engineering.md)
-- [Evals](evals.md)
-- [Contribution playbook](contribution-playbook.md)
+- [Evals](evals.en.md)
+- [Contribution playbook](contribution-playbook.en.md)
 - [Bilingual docs strategy](bilingual-docs.md)
+
+## Concept and evidence indexes
+
+- [Glossary](glossary.en.md) — a quick entry point for Agent loop, Provider, Tool, Session, Compaction, and contribution terms.
+- [Source and version index](source-index.en.md) — source anchors and the reference commit for each topic.
 
 ## Reading principles
 

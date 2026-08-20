@@ -14,14 +14,16 @@ This is not official documentation, and it is not a complete tutorial. It is a f
 
 Full documentation map: [docs/README.en.md](docs/README.en.md).
 
+Source anchors and version notes: [source index](docs/source-index.en.md). Recurring concepts: [glossary](docs/glossary.en.md).
+
 Start with the whole system, then move into boundaries:
 
-1. [Core ideas](docs/pi-overview.md)
+1. [Core ideas](docs/pi-overview.en.md)
 2. [Visual architecture map](docs/visual-map.md)
-3. [Architecture](docs/architecture.md)
-4. [Agent Core](docs/agent-core.md)
+3. [Architecture](docs/architecture.en.md)
+4. [Agent Core](docs/agent-core.en.md)
 5. [Coding Agent](docs/coding-agent.md)
-6. [Extension System](docs/extensions.md)
+6. [Extension System](docs/extensions.en.md)
 7. [Tool Execution / Safety](docs/tool-execution-safety.md)
 8. [Session / Storage](docs/session-storage.md)
 9. [SQLite Session Backend](docs/session-backend.md)
@@ -34,27 +36,27 @@ If you want a visual-first path, start with the [visual architecture map](docs/v
 
 If you are interested in upstream participation, start here:
 
-- [Contribution playbook](docs/contribution-playbook.md)
+- [Contribution playbook](docs/contribution-playbook.en.md)
 - [Engineering governance](docs/engineering.md)
-- [Evals](docs/evals.md)
+- [Evals](docs/evals.en.md)
 
-Most long-form notes are currently Chinese-first. English versions will be added after the corresponding topics stabilize.
+Most long-form notes remain Chinese-first, with English versions available for the highest-value architecture and contribution topics.
 
 ## Reference
 
 ### Architecture
 
-- [Core ideas](docs/pi-overview.md) — Pi's layering, core abstractions, and design direction.
+- [Core ideas](docs/pi-overview.en.md) — Pi's layering, core abstractions, and design direction.
 - [Visual architecture map](docs/visual-map.md) — a quick mental model using the central runtime, six boundaries, and a comparison table.
-- [Architecture](docs/architecture.md) — monorepo package structure and module boundaries.
-- [Agent Core](docs/agent-core.md) — agent loop, events, and tool-call execution.
+- [Architecture](docs/architecture.en.md) — monorepo package structure and module boundaries.
+- [Agent Core](docs/agent-core.en.md) — agent loop, events, and tool-call execution.
 - [AI Package](docs/ai-package.md) — providers, models, streaming, and multi-provider abstraction.
 - [Coding Agent](docs/coding-agent.md) — the product layer that turns agent-core into a coding agent.
 - [TUI Engine](docs/tui-engine.md) — terminal UI, component model, and rendering approach.
 
 ### Runtime Boundaries
 
-- [Extension System](docs/extensions.md) — extension loading, events, commands, tools, providers, and UI hooks.
+- [Extension System](docs/extensions.en.md) — extension loading, events, commands, tools, providers, and UI hooks.
 - [Tool Execution / Safety](docs/tool-execution-safety.md) — `read` / `bash` / `edit` / `write`, hooks, truncation, mutation queues, and sandbox posture.
 - [Session / Storage](docs/session-storage.md) — JSONL sessions, entry trees, branches, and context projection.
 - [SQLite Session Backend](docs/session-backend.md) — `node:sqlite` adapter, repository, migrations, writer leases, FTS search, and backend separation.
@@ -67,8 +69,8 @@ Most long-form notes are currently Chinese-first. English versions will be added
 ### Engineering
 
 - [Engineering governance](docs/engineering.md) — CI/CD, dependency management, supply-chain safety, and maintenance style.
-- [Evals](docs/evals.md) — eval harness, real AgentSession runs, and LLM behavior regression.
-- [Contribution playbook](docs/contribution-playbook.md) — issues, PRs, `lgtmi` / `lgtm`, and entry points for new contributors.
+- [Evals](docs/evals.en.md) — eval harness, real AgentSession runs, and LLM behavior regression.
+- [Contribution playbook](docs/contribution-playbook.en.md) — issues, PRs, `lgtmi` / `lgtm`, and entry points for new contributors.
 - [Bilingual docs strategy](docs/bilingual-docs.md) — Chinese-first notes, progressive English versions, and a future docs-site shape.
 
 ## Repo layout

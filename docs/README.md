@@ -8,6 +8,8 @@
 
 > 想系统理解 Pi，应该按什么顺序读？每篇文档解决哪类问题？
 
+源码依据和版本变化见：[源码依据与版本索引](source-index.md)；概念跳转见：[Pi Runbook 概念索引](glossary.md)。
+
 这些文档是源码阅读笔记，不是上游官方文档。它们更像一份 field guide：先用图建立心智模型，再用源码观察、解释和实验路线把理解落下来。
 
 ## 推荐阅读路线
@@ -21,6 +23,11 @@
 3. [架构总览](architecture.md)
 
 读完这一组，应该能回答：Pi 是产品、框架，还是 agent 底座？`pi-ai`、`pi-agent-core`、`pi-tui`、`pi-coding-agent` 分别站在哪一层？
+
+### 概念和证据
+
+- [概念索引](glossary.md) — 从 Agent loop、Provider、Tool、Session、Compaction 到 `lgtmi` / `lgtm` 的快速入口。
+- [源码依据与版本索引](source-index.md) — 每个主题回到哪些源码边界，以及当前参考 commit。
 
 ### 2. 再拆 runtime 边界
 

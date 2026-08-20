@@ -14,6 +14,8 @@ Pi 是一个小而可组合的 coding agent harness。这个仓库试图回答�
 
 完整文档地图见：[docs/README.md](docs/README.md)。
 
+源码依据和版本锚点见：[源码索引](docs/source-index.md)；常见概念见：[概念索引](docs/glossary.md)。
+
 先读整体，再读边界：
 
 1. [核心思想概览](docs/pi-overview.md)

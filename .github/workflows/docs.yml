@@ -1,0 +1,38 @@
+name: Documentation checks
+
+on:
+  push:
+    paths:
+      - "README.md"
+      - "README.en.md"
+      - "docs/**"
+      - "journal/**"
+      - "experiments/**"
+      - "scripts/check-docs.mjs"
+      - ".github/workflows/docs.yml"
+  pull_request:
+    paths:
+      - "README.md"
+      - "README.en.md"
+      - "docs/**"
+      - "journal/**"
+      - "experiments/**"
+      - "scripts/check-docs.mjs"
+      - ".github/workflows/docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate documentation
+        run: node scripts/check-docs.mjs
